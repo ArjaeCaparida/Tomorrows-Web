@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<head>
+  <!-- links the the css files -->
+  <link rel="stylesheet" href="gallerystyle.css">
+  <link rel="stylesheet" href="animation.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body background="images/bg2.jpg">
+<!-- background image -->
+  <div class="navigation">
+    <h2> 
+      <a class="left" href="index.html">
+        HOME
+      </a>
+    </h2>
+    <h1>  
+      <a class="indexlink" href ="gallery.html">
+        COMPOUND V
+      </a>
+    </h1>
+    <h2> 
+      <a class="right" href="about.html">
+        ABOUT
+      </a>
+    </h2>
+  </div>
+
+  <!-- page banner -->
+  <div>
+    <img class="img1" src="images/img2.jpg">
+  </div>
+
+  <!-- fun little animation in the page -->
+  <div>
+    <img class="pic" src="images/c1.png">
+    <img class="pic1" src="images/c2.png">
+  </div>
+
+  <!-- character descriptions (line 40 to 107)  -->
+  <div>
+    <img class="characterL1 reveal up" src="images/homelander.png">
+    <h6 class="textR1 reveal left">The character is depicted as an egotistical and
+      sadistic narcissist who serves as the extremely powerful leader
+      of The Seven, a group of corrupt and hedonistic superheroes 
+      funded by Vought-American, and the archenemy of Billy Butcher.</h6> 
+  </div>
+  <!-- button that calls the function that starts the picture in picture api -->
+  <button class="button btn1" id="pipButton1" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+
+  <div>
+    <img class="characterR1 reveal up" src="images/maeve.png">
+    <h6 class="textL1 reveal right">She is a former superhero and member of The Seven.
+        As a warrior, a feminist, a humanitarian, and second most powerful 
+        member of The Seven, Queen Maeve is the ultimate role model for 
+        little girls all over the world. </h6>
+  </div>
+  <button class="button btn2" id="pipButton2" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+  <div>
+    <img class="characterL2 reveal right" src="images/deep.png">
+    <h6 class="textR2 reveal left">The Deep becomes arrogant and selfish. He's mean 
+      and uncaring.
+      The Deep is actually a very pure human being with intentions of 
+      doing good. Still however, his position in The Seven, his sense of 
+      being useless, makes him form bad person protective shell.</h6>
+  </div>
+  <button class="button btn3" id="pipButton3" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+  <div>
+    <img class="characterR2 reveal left" src="images/atrain.png">
+    <h6 class="textL2 reveal right">A-Train is a major antagonist in the Dynamite 
+      series The Boys. He is a speedster who used to be a part of a team 
+      known as Teenage Kix but became a member of the Seven to replace 
+      their previous speedster. He is the archenemy of Hughie Campbell.</h6>
+  </div>
+  <button class="button btn4" id="pipButton4" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+  <div>
+    <img class="characterL3 reveal right" src="images/black.png">
+    <h6 class="textR3 reveal left">He was a mute, darkly costumed superhero and a 
+      member of The Seven. Silent, stealthy, and enigmatic, Black Noir 
+      was The Seven's superpowered ninja. His super strength and heightened 
+      senses were matched only by his proficiency in the martial arts.</h6>
+  </div>
+  <button class="button btn5" id="pipButton5" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+  <div>
+    <img class="characterR3 reveal left" src="images/starlight.png">
+    <h6 class="textL3 reveal right ">Starlight isn't cynical about her superhero duties
+        like Homelander is. She actually believes that superheroes can 
+        make the world a better place when they're well-intentioned.</h6>
+  </div>
+  <button class="button btn6" id="pipButton6" type="button">
+    <h5>Click Here!</h5>
+  </button>
+
+<!-- places the hidden mp4 files in the html to be used in the picture in picture api -->
+  <video hidden controls id="vid1">
+    <source src="videos/homelander.mp4" type="video/mp4">
+  </video>
+  <video hidden controls id="vid2">
+    <source src="videos/maeve.mp4" type="video/mp4">
+  </video>
+  <video hidden controls id="vid3">
+    <source src="videos/deep.mp4" type="video/mp4">
+  </video>
+  <video hidden controls id="vid4">
+    <source src="videos/atrain.mp4" type="video/mp4">
+  </video>
+  <video hidden controls id="vid5">
+    <source src="videos/noir.mp4" type="video/mp4">
+  </video>
+  <video hidden controls id="vid6">
+    <source src="videos/starlight.mp4" type="video/mp4">
+  </video>
+
+
+
+  <!-- javascript for the web animations -->
+  <script type="text/javascript" src="animation.js">// this script is for web animation api</script>
+  <script> // this is for creating the pictue in picture API
+    const vid1 = document.getElementById('vid1');//gets the elements from the html
+    const vid2 = document.getElementById('vid2');
+    const vid3 = document.getElementById('vid3');
+    const vid4 = document.getElementById('vid4');
+    const vid5 = document.getElementById('vid5');
+    const vid6 = document.getElementById('vid6');
+    const pipButton1 = document.getElementById('pipButton1');
+    const pipButton2 = document.getElementById('pipButton2');
+    const pipButton3 = document.getElementById('pipButton3');
+    const pipButton4 = document.getElementById('pipButton4');
+    const pipButton5 = document.getElementById('pipButton5');
+    const pipButton6 = document.getElementById('pipButton6');
+        
+    if ('pictureInPictureEnabled' in document) {// function that creats the api
+
+            pipButton1.addEventListener('click', () => {//when clicked, opens the picture in picture
+            vid1.requestPictureInPicture();
+            });
+            pipButton2.addEventListener('click', () => {
+            vid2.requestPictureInPicture();
+            });
+            pipButton3.addEventListener('click', () => {
+            vid3.requestPictureInPicture();
+            });
+            pipButton4.addEventListener('click', () => {
+            vid4.requestPictureInPicture();
+            });
+            pipButton5.addEventListener('click', () => {
+            vid5.requestPictureInPicture();
+            });
+            pipButton6.addEventListener('click', () => {
+            vid6.requestPictureInPicture();
+            });
+        }
+  </script>
+</body>
+</html>

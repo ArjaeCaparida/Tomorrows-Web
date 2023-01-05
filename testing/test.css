@@ -1,0 +1,23 @@
+
+
+.pic{
+  width: 100%;
+  padding-top: 0.5%;
+  left: 0;
+  margin:0;
+}
+
+
+.button{
+  position: absolute;
+  border-radius: 20px;  
+  padding: 1%;
+  box-shadow: 2px 2px #000000;   
+  background-color: #ffffff;
+  transition: 1s;
+}
+.button:hover{
+  background-color: #000000;
+  padding: 5%;
+}
+

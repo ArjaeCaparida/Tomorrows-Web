@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="test.css">
+</head>
+<body>
+
+    <video controls id="vid1">
+        <source src="homelander.mp4" type="video/mp4">
+      </video>
+    
+
+    
+    <div>
+    <button class="button btn1" id="pipButton1" type="button">
+        <h5>Click Here!</h5>
+    </button>
+
+
+</div>
+
+
+    <script> // this is for creating the pictue in picture API
+        const video = document.getElementById('vid1');
+        const pipButton1 = document.getElementById('pipButton1');
+        if ('pictureInPictureEnabled' in document) {
+            pipButton1.classList.remove('hidden')
+            pipButton1.disabled = false;
+
+            pipButton1.addEventListener('click', () => {
+            vid1.requestPictureInPicture();
+            });
+}
+    </script>
+
+
+
+
+
+</body>
+</html>
